@@ -51,7 +51,11 @@ func (b *Board) writeMossKV(kv *KV) error {
 	}
 
 	err = b.collection.ExecuteBatch(batch, moss.WriteOptions{})
-
+	// On my mac book pro laptop, adding this comment will
+	// make test 101 succeed, where it fails otherwise. So
+	// it appears there is a background data race to complete
+	// the write.
+	//p("ExecuteBatch finished with err = %v", err)
 	return err
 }
 
