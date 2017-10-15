@@ -98,7 +98,7 @@ func (b *Board) listMoss() (kv []*KV, err error) {
 	for {
 		k, _, err := iter.Current()
 		if err == moss.ErrIteratorDone {
-			return kv, nil
+			break
 		}
 		key2 := make([]byte, len(k))
 		copy(key2, k)
