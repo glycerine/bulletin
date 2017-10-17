@@ -116,7 +116,7 @@ func (b *Board) listMoss() (kv []*KV, err error) {
 
 func (b *Board) closeMoss() error {
 
-	b.store.Persist(nil, moss.StorePersistOptions{})
+	//b.store.Persist(nil, moss.StorePersistOptions{})
 
 	errs := ""
 	err := b.collection.Close()
